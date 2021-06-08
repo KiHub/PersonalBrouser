@@ -1,24 +1,86 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PersonalBrouser" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qMu-zX-EUr">
+                                <rect key="frame" x="0.0" y="86" width="414" height="810"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o9J-5D-6fK">
+                                <rect key="frame" x="343" y="44" width="56" height="30"/>
+                                <state key="normal" title="Forward"/>
+                                <connections>
+                                    <action selector="forwardButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4V2-BI-KQe"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hIF-zI-1QQ">
+                                <rect key="frame" x="20" y="44" width="56" height="30"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <action selector="backButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rXh-85-EDd"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="36c-sJ-7Ye">
+                                <rect key="frame" x="84" y="44" width="251" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="251" id="gs9-W5-DxH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                            </textField>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="o9J-5D-6fK" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="0Rj-gJ-jcA"/>
+                            <constraint firstItem="qMu-zX-EUr" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="1km-23-8Za"/>
+                            <constraint firstItem="36c-sJ-7Ye" firstAttribute="leading" secondItem="hIF-zI-1QQ" secondAttribute="trailing" constant="8" symbolic="YES" id="4ra-yi-Hhb"/>
+                            <constraint firstItem="hIF-zI-1QQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="5J2-au-PVg"/>
+                            <constraint firstItem="qMu-zX-EUr" firstAttribute="top" secondItem="36c-sJ-7Ye" secondAttribute="bottom" constant="8" symbolic="YES" id="84d-54-jGZ"/>
+                            <constraint firstItem="36c-sJ-7Ye" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="C2d-5o-zCB"/>
+                            <constraint firstItem="o9J-5D-6fK" firstAttribute="leading" secondItem="36c-sJ-7Ye" secondAttribute="trailing" constant="8" symbolic="YES" id="Lu6-Aq-qni"/>
+                            <constraint firstItem="qMu-zX-EUr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="NI3-z6-KU7"/>
+                            <constraint firstItem="hIF-zI-1QQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="QXp-vd-2N1"/>
+                            <constraint firstItem="hIF-zI-1QQ" firstAttribute="width" secondItem="o9J-5D-6fK" secondAttribute="width" id="Y7I-Xl-lAY"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="o9J-5D-6fK" secondAttribute="trailing" constant="15" id="adC-b1-Xb3"/>
+                            <constraint firstItem="qMu-zX-EUr" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="qVz-AJ-HjE"/>
+                            <constraint firstAttribute="bottom" secondItem="qMu-zX-EUr" secondAttribute="bottom" id="zgD-R1-ev8"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="backButton" destination="hIF-zI-1QQ" id="GOs-nU-cTm"/>
+                        <outlet property="forwardButton" destination="o9J-5D-6fK" id="iPa-ok-F4l"/>
+                        <outlet property="urlTextField" destination="36c-sJ-7Ye" id="7OG-7S-Ngt"/>
+                        <outlet property="webView" destination="qMu-zX-EUr" id="O6M-W9-dx4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="13.043478260869566" y="103.79464285714285"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
